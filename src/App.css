@@ -36,3 +36,126 @@
     transform: rotate(360deg);
   }
 }
+
+.mainBox{
+  margin: 79px auto;
+}
+.bannerBox img{
+  width: 100%;
+}
+.logoBox{
+  text-align: center;
+  padding-top:100px  ;
+}
+.logoBox h1{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 44px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #161A1D;
+}
+
+.logoBox h5{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #A2A3A5;
+}
+.form-box{
+  margin-top: 53px;
+  border-bottom: 2px solid #E8E8E8;
+  padding: 15px;
+  text-align: left;
+
+}
+.form-box select{
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #161A1D;
+  border: none;
+  position: relative;
+  top: -7px;
+  left: 7px;
+}
+.form-box .flag-img{
+  width: 28px;
+  height: 28px;
+}
+.flagBox{
+  padding-top: 14px;
+}
+.form-box input{
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  text-transform: capitalize;
+  color: #161A1D;
+  border: none;
+  margin-top: 15px;
+  padding-left: 15px;
+}
+.form-box input::placeholder{
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  text-transform: capitalize;
+  color: #161A1D;
+}
+.form-box input:focus{
+  outline: none;
+}
+.inputbox{
+  position: relative;
+}
+.inputbox::before{
+  content: "";
+  width: 2px;
+  height: 70%;
+  background-color: #E8E8E8;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#mybtn{
+  width: 347px;
+  height: 80px;
+  background-color: #DF201F;
+  box-shadow: 2px 2px 25px 2px rgba(223, 32, 31, 0.5);
+  border-radius: 60px;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+  margin-top: 79px;
+}
+.inputfield{
+  width: 90%;
+}
+.inputbox{
+  position: relative;
+}
+.inputbox img{
+  position: absolute;
+  top: 18px;
+  right: 0;
+  opacity: 0.5;
+}
