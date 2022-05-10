@@ -33,7 +33,7 @@ return (
                         </Grid>
                     </Box>
                     <Grid>
-                        <Button id='mybtn'>Get OTP</Button>
+                        <button className='mybtn'>Get OTP</button>
                     </Grid>
                 </Grid>
                 <Grid item lg={8} md={6} sm={12} xs={12} className="bannerBox">
