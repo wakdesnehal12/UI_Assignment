@@ -11,13 +11,13 @@ return (
     <div>
         <Container className='mainBox'>
             <Grid container>
-                <Grid item md={5} className="logoBox">
+                <Grid item lg={4} md={6} sm={12} xs={12} className="logoBox">
                     <img src={logo} alt="logo"/>
                     <Typography variant='h1'>Welcome Back!</Typography>
                     <Typography variant='h5'>login account</Typography>
                     <Box className='form-box'>
                         <Grid container>
-                            <Grid className='flagBox' item xs={12} sm={3}>
+                            <Grid className='flagBox' item xs={4} sm={3}>
                             <img className='flag-img' src={flag} alt="flag"/>
                                 <select> 
                                     <option> +91</option>
@@ -26,7 +26,7 @@ return (
                                     <option> +94</option>
                                 </select>
                             </Grid>
-                            <Grid className='inputbox' item xs={12} sm={9}>
+                            <Grid className='inputbox' item xs={8} sm={9}>
                                 <input className='inputfield' placeholder="Mobile no" />
                                 <img src={phone_icon} alt="phone"/>
                             </Grid>
@@ -36,7 +36,7 @@ return (
                         <Button id='mybtn'>Get OTP</Button>
                     </Grid>
                 </Grid>
-                <Grid item md={7} className="bannerBox">
+                <Grid item lg={8} md={6} sm={12} xs={12} className="bannerBox">
                     <img src={login_banner} alt="banner"/>
                 </Grid>
             </Grid>
