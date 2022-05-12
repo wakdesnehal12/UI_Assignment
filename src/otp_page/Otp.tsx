@@ -1,9 +1,8 @@
+import React from 'react'
 import { Box, Container, Grid, Typography } from '@material-ui/core';
 import verify_img from '../assets/verify.png';
 import logo from '../assets/logo.png';
 import icon from '../assets/Icon.png';
-
-import React from 'react'
 
 export default function Otp() {
   return (
@@ -24,7 +23,7 @@ export default function Otp() {
                     </Box>
                     <p className='secInpt'>sec 08</p>
                     <Typography className='otpBox'>
-                        <a>Resend OTP</a> 
+                        <a href="#">Resend OTP</a> 
                         <img src={icon} alt="logo"/>
                     </Typography>
                     <Box>

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=Montserrat+Alternates:wght@500&display=swap');
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=Montserrat+Alternates:wght@500&family=Roboto+Flex:opsz,wght@8..144,500;8..144,600&display=swap');
+/* .App {
   text-align: center;
-}
+} */
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -36,11 +36,12 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 /*Login_Page */
 .mainBox{
   margin: 79px auto;
+  text-align: center;
 }
 .bannerBox img{
   width: 100%;
@@ -173,7 +174,7 @@
 
 /* Verification_Page */
 .VerifyBox{
-  margin-top: 34px;
+  margin-top: 62px;
 }
 .VerifyBox img{
   margin-bottom: 20px;
@@ -227,6 +228,7 @@
   text-align: center;
   text-transform: capitalize;
   color: #DF201F;
+  margin-bottom: 0;
 }
 .otpBox{
   margin: 0;
@@ -247,8 +249,9 @@
   width: 40px;
   height: 40px;
   position: relative;
-  top: 30px;
+  top: 12px;
   left: 15px;
+  margin-bottom: 0;
 }
 .mainBox .mybtn{
   width: 347px;
@@ -281,5 +284,319 @@
     width: 250px;
     height: 60px;
     margin-top: 50px;
+  }
+}
+/* Product List Page */
+.headerMainBox{
+  box-shadow: 2px 2px 30px 2px #FFF3E5;
+  margin-bottom: 40px;
+}
+.HeaderBox{
+  padding: 21px 0;
+}
+.HeaderBox .logoData img{
+  width: 52px;
+  height: 57px;
+}
+.HeaderBox .foodData{
+  font-family: 'Roboto Flex', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 48px;
+  color: #161A1D;
+  display: inline-block;
+  position: relative;
+  top: -23px;
+  left: 14px;
+}
+.HeaderBox .admin{
+  text-align: center;
+}
+.HeaderBox .admin img{
+  width: 58px;
+  height: 58px;
+  border: 4px solid #FFFFFF;
+}
+
+.HeaderBox .icon{
+  color: #161A1D;
+  position: relative;
+  text-align: center;
+  top: 21px;
+}
+.HeaderBox .icon svg{
+  width: 26px;
+  height: 28px;
+}
+.count{
+  width: 33px;
+  height: 21px;
+  background: #DF201F;
+  border-radius: 40px;
+  color: #FFFFFF;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: capitalize;
+  text-align: center;
+}
+.navBox{
+  justify-content: center;
+}
+.navBox li{
+  padding: 12px 60px;
+  text-align: center;
+}
+.navBox span{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #161A1D;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  padding-bottom: 15px;
+  border-bottom: 3px solid transparent;
+}
+.navBox span:hover{
+  color: #DF201F;
+  border-color: red;
+  transition: 0.5s;
+}
+
+.hideBtn{
+  display: none;
+}
+
+.productText{
+  font-family: 'Bai Jamjuree', sans-serif !important;
+  font-style: normal;
+  font-weight: 600 !important;
+  font-size: 26px !important;
+  line-height: 32px !important;
+  text-transform: capitalize;
+  color: #161A1D;
+  padding-top: 27px;
+}
+.searchBox{
+  position: relative;
+}
+
+.searchBox input{
+  border: none;
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  text-transform: capitalize;
+  color: #A2A3A5;
+  padding: 16px 20px;
+  border: 1px solid #E7E7E9;
+  border-radius: 60px;
+  width: 80%;
+}
+
+.searchIconBox{
+  position: absolute;
+  top: 21px;
+  right: 65px;
+}
+.productBtn button{
+  border: none;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.05em; 
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: #94CD00;
+  box-shadow: 2px 2px 25px 2px rgba(148, 205, 0, 0.4);
+  border-radius: 60px;
+  padding:17px 52px 20px 30px;
+}
+.productBtn button span{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 5px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #FFFFFE;
+  position: relative;
+  top: 6px;
+  right: -15px;
+}
+.tableBoxdata.MuiGrid-container{
+  flex-wrap: nowrap;
+  margin-bottom: 30px;
+}
+.tableBoxdata{
+  margin-bottom: 30px;
+}
+.tableBox{
+  background: #FFFFFF;
+  box-shadow: 2px 2px 30px 2px #FFF3E5;
+  margin-bottom: 48px;
+}
+
+.tableHead{
+  border: none;
+  background: #DF201F;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.tableRow{
+  font-family: 'Bai Jamjuree', sans-serif !important;
+  font-style: normal;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  line-height: 25px !important;
+  text-transform: capitalize;
+  color: #FFFFFF !important;
+}
+.tableBody .tableCell{
+  padding-left: 28px;
+}
+.tableHead th{
+  position: relative;
+}
+.tableHead th:first-child{
+  padding-left: 40px;
+}
+.tableHead th::before{
+  content: "";
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  background: #FFFFFF;
+  opacity: 0.1;
+  border-radius: 8px 8px 0px 0px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.tableBody .tableCell:first-child{
+  padding-left: 30px;
+  position: relative;
+  width: 260px;
+  padding-top: 19px;
+}
+.tableBody .menuText{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 68px;
+  color: #A2A3A5;
+  position: absolute;
+  left: 90px;
+  top: 5px;
+}
+.tableBody .tableCell{
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 68px;
+  color: #A2A3A5;
+}
+.foodPagination ul{
+  justify-content: end;
+}
+.foodPagination ul li button{
+  border: none;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 68px;
+  letter-spacing: 2em;
+  color: #A2A3A5;
+  background-color: transparent;
+}
+.foodPagination ul li button.Mui-selected{
+  background: #DF201F;
+  border-radius: 5px; 
+  color: #FFFFFF;
+}
+@media screen and (max-width:1100px) {
+  .tableBody .tableCell:first-child{
+    width: 210px;
+  }
+}
+@media screen and (max-width:992px) {
+  .navBox li{
+    display: none;
+  }
+  .hideBtn {
+    display: block;
+    text-align: right;
+  }
+  .hideBtn svg{
+    font-size: 40px;
+    margin-top: 2px;
+    margin-right: 18px;
+  }
+  .mobileNav.MuiListItem-root{
+    display: block;
+    width: 260px;
+  }
+  .mobileNav div.MuiListItemText-root{
+    display: block;
+    padding: 10px 0;
+  }
+  .mobileNav span{
+    font-family: 'Bai Jamjuree';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #161A1D;
+  }
+  .mobileNav span:hover{
+    color: #DF201F;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tableBoxdata.MuiGrid-container{
+    flex-wrap: wrap;
+  }
+  .productBtn{
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .searchBox{
+    margin-top: 15px;
+  }
+  .searchBox input{
+    width: 88%;
+  }
+  table.tableBox{
+    width: 1000px;
+    overflow-x: scroll;
+  }
+  .foodPagination ul {
+    justify-content: center;
+  }
+  .logoData {
+    text-align: center;
+  }
+  .productText{
+    text-align: center;
   }
 }
