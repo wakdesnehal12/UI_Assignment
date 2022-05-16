@@ -385,6 +385,7 @@
   text-transform: capitalize;
   color: #161A1D;
   padding-top: 27px;
+  position: relative;
 }
 .searchBox{
   position: relative;
@@ -587,7 +588,10 @@
     width: 88%;
   }
   table.tableBox{
-    width: 1000px;
+    overflow-x: scroll;
+    width: 1200px;
+  }
+  .tableBoxDiv{
     overflow-x: scroll;
   }
   .foodPagination ul {
@@ -599,4 +603,210 @@
   .productText{
     text-align: center;
   }
+}
+/* Add New Product */
+.addProduct.MuiContainer-root{
+  padding: 53px 77px 60px 73px;
+  background: white;
+  border-radius: 10px;
+}
+.productForm{
+  margin-top: 26px;
+}
+.productText p{
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  text-transform: capitalize;
+  color: #161A1D;
+  padding-bottom: 19px;
+  padding-top: 0;
+}
+.productText .mySlider{
+  width: 100%;
+  padding-right: 50px;
+}
+.mySlider .carousel-indicators{
+  right: 13%;
+  bottom: 26px;
+} 
+.mySlider .carousel-inner{
+  border-radius: 11px;
+}
+.mySlider .carousel-control-prev, .mySlider .carousel-control-next{
+  opacity: 1;
+}
+.mySlider .carousel-control-next{
+  right: 11%;
+}
+.mySlider .carousel-indicators [data-bs-target]{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 1;
+  border: 0;
+}
+.mySlider .carousel-indicators .active{
+  background: #DF201F;
+}
+.productText .mySlider img{
+  width: 100%;
+}
+.inputProdBox label{
+  display: block;
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  text-transform: capitalize;
+  color: #161A1D;
+  text-align: left;
+}
+
+.inputProdBox input, .inputProdBox select,textarea{
+  border: 2px solid #E8E8E8;
+  border-radius: 10px;
+  padding: 16px 0 16px 22px;
+  margin: 8px 0;
+  width: 100%;
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 28px;
+  text-transform: capitalize;
+  color: #A2A3A5;
+}
+.inputProdBox select{
+  height: 64px;
+}
+.inputProdBox .prdtname{
+  width: 90%;
+}
+.inputProdBox .priceBox{
+  width: 80%;
+}
+.inputProdBox .unitBox{
+  width: 83%;
+  padding: 16px 0 16px 10px;
+}
+.inputProdBox input::placeholder,textarea{
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 28px;
+  text-transform: capitalize;
+  color: #A2A3A5;
+}
+textarea{
+  width: 90%;
+  min-height: 136px;
+}
+.addProduct .savePrdt{
+  background: #94CD00;
+  box-shadow: 2px 2px 25px 2px rgba(148, 205, 0, 0.6);
+  border-radius: 60px;
+  padding: 19px 36px;
+  border: none;
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-top: 13px;
+}
+
+@media screen and (max-width: 1200px) {
+  .productText img{
+    width: 93%;
+  }
+  
+}
+@media screen and (max-width: 992px) {
+  .productForm{
+    margin-left: 19px;
+  }
+  
+  .inputProdBox .prdtname,textarea {
+    width: 95%;
+  }
+  .productText img{
+    width: 100%;
+  }
+
+  .inputProdBox .priceBox,.inputProdBox .unitBox{
+    width: 90%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .addProduct.MuiContainer-root{
+    padding: 30px;
+  }
+}
+
+.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm{
+  max-width: 100%;
+  overflow: visible;
+}
+
+.closeIcon{
+  width: 44px;
+  height: 44px;
+  background: #DF201F;
+  border-radius: 50%;
+  color: #FFFFFF;
+  border: none;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  cursor: pointer;
+}
+.MuiDialog-paper{
+  overflow: visible;
+}
+
+/* popover */
+.addProduct .popBox{
+  color: #161A1D;
+}
+.imagePopup button{
+  border: none;
+  background: transparent;
+  position: absolute;
+  z-index: 9;
+  color: #ffffff;
+  right: 77px;
+  top: 107px;
+}
+.imagePopup button svg{
+  font-size: 36px;
+}
+
+.myPopBx .MuiPopover-paper{
+  width: 159px;
+  height: 82px;
+  background: #FFFFFF;
+  border: 1px solid #EFEFEF;
+  border-radius: 5px;
+  padding: 10px 15px;
+  left: 34% !important;
+}
+
+.myPopBx .MuiPopover-paper p{
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #161A1D;
+  padding: 0;
 }

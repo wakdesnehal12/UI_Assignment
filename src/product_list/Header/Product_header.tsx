@@ -38,7 +38,7 @@ export default function Product_header() {
                     </Grid> 
                 </Grid>
             </Container>
-            <Product_list/>
+            {/* <Product_list/> */}
         </div>
         )
     }
