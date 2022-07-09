@@ -1,14 +1,102 @@
-import React from 'react';
+import React, { createContext, useState, useEffect, useRef, useContext } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core';
-import french_fries from '../../assets/french_fries.png';
-import french_crostin from '../../assets/french_crostin.png';
-import Noodles from '../../assets/Noodles.png';
-import pizza from '../../assets/Pizza.png';
-import rice from '../../assets/rice.png';
-import fried_rice from '../../assets/fried_rice.png';
+import ConfirmBox from './ConfirmBox'
+import { Pagination } from '@mui/material';
 
+//for delete popup box
+export interface ProData{
+    message: string,
+    isLoading: boolean,
+}
 
-export default function Product_table_data() {
+export default function Product_table_data({handleEditClick}:any) {
+    //for get item in my table
+    const [data, setData] = useState<any>([]);
+
+    //for edit
+    const [editData, setEditData] = useState<any>()
+
+    //for delete popup
+    const [confirmBox, setConfirmBox] = useState({
+        message: "",
+        isLoading: false,
+    });
+    const idProductRef = useRef();
+    
+    //common url
+    const baseUrl = 'https://extended-retail-app.herokuapp.com/api';
+    
+    //for get item in my table
+    let getData = async() => {
+        const newData:any = localStorage.getItem('key');
+        const jsonData:any = JSON.parse(newData);
+        const tokenData = jsonData.token
+        // console.log(tokenData, "list2")
+        await fetch(`${baseUrl}/products/getMenuItems?userId=624a61bbd873b1d7b1bc78bc`,{
+            method: "GET",
+            headers:{
+                'Content-Type' : 'application/json',
+                token: tokenData
+            }
+        })
+        .then(res => res.json())
+        .then((result) => {
+            setData(result.data)
+            localStorage.setItem('keyone', JSON.stringify(result))
+        })
+        .catch((err) => { 
+            console.log(err)
+        })
+    }
+
+    useEffect(() => {
+        getData();
+    },[])
+
+    //Delete modal
+    const handleDialog = (message:any, isLoading:any) => {
+        setConfirmBox({
+            message,
+            isLoading
+        })
+    }
+    const userDelete = async (choose:any) => {
+        if(choose){
+            deleteData(idProductRef.current);
+            handleDialog("", false);
+        }else{
+            handleDialog("", false);
+        }
+    }
+    const handleDeleteClick = (_id:any) => {
+        handleDialog("Are you sure you want to delete this product?", true)
+        idProductRef.current = _id
+    }
+
+    //Delete API
+    const deleteData = async(_id:any) => {
+        const newData:any = localStorage.getItem('key');
+        const jsonData:any = JSON.parse(newData);
+        const tokenData = jsonData.token;
+        const userId = jsonData?.data?._id;
+
+        await fetch(`${baseUrl}/products/deleteMenuItem?userId=${userId}&itemId=${_id}`, {
+            method: "DELETE",
+            headers:{   
+                'Content-Type': 'application/json',
+                token: tokenData
+            }
+        })
+        .then(res => res.json())
+        .then((result) => {
+            console.log(result)
+            getData()
+        }).catch((err) => {
+            console.log(err)
+        })
+        
+    }
+    
     return (
         <>
             <Table className='tableBox'>
@@ -20,87 +108,41 @@ export default function Product_table_data() {
                         <TableCell className='tableRow'>Status</TableCell>
                         <TableCell className='tableRow'>Price</TableCell>
                         <TableCell className='tableRow'>Discount Price</TableCell>
+                        <TableCell className='tableRow'>Edit</TableCell>
+                        <TableCell className='tableRow'>Delete</TableCell>
                     </TableRow>
                 </TableHead>
-                <TableBody className='tableBody'>
-                    <TableRow>
-                        <TableCell className='tableCell'>
-                            <img src={french_fries} alt="french_fries"/>
-                            <Typography className='menuText'>French Fries</Typography>
-                        </TableCell>
-                        <TableCell className='tableCell'>01475</TableCell>
-                        <TableCell className='tableCell'>9608</TableCell>
-                        <TableCell className='tableCell'>In Stock</TableCell>
-                        <TableCell className='tableCell'>₹ 200</TableCell>
-                        <TableCell className='tableCell'>₹ 200</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell className='tableCell'>
-                            <img src={french_crostin} alt="french_fries"/>
-                            <Typography className='menuText'>French Crostini</Typography>
-                        </TableCell>
-                        <TableCell className='tableCell'>02351</TableCell>
-                        <TableCell className='tableCell'>2290</TableCell>
-                        <TableCell className='tableCell'>Out Of Stock</TableCell>
-                        <TableCell className='tableCell'>₹ 150</TableCell>
-                        <TableCell className='tableCell'>₹ 150</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell className='tableCell'>
-                            <img src={Noodles} alt="french_fries"/>
-                            <Typography className='menuText'>Noodles</Typography>
-                        </TableCell>
-                        <TableCell className='tableCell'>12121</TableCell>
-                        <TableCell className='tableCell'>2769</TableCell>
-                        <TableCell className='tableCell'>In Stock</TableCell>
-                        <TableCell className='tableCell'>₹ 500</TableCell>
-                        <TableCell className='tableCell'>₹ 500</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell className='tableCell'>
-                            <img src={french_fries} alt="french_fries"/>
-                            <Typography className='menuText'>Garlic Bread</Typography>
-                        </TableCell>
-                        <TableCell className='tableCell'>12145</TableCell>
-                        <TableCell className='tableCell'>12145</TableCell>
-                        <TableCell className='tableCell'>Out Of Stock</TableCell>
-                        <TableCell className='tableCell'>₹ 100</TableCell>
-                        <TableCell className='tableCell'>₹ 100</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell className='tableCell'>
-                            <img src={pizza} alt="french_fries"/>
-                            <Typography className='menuText'>Pizza</Typography>
-                        </TableCell>
-                        <TableCell className='tableCell'>14451</TableCell>
-                        <TableCell className='tableCell'>3606</TableCell>
-                        <TableCell className='tableCell'>In Stock</TableCell>
-                        <TableCell className='tableCell'>₹ 150</TableCell>
-                        <TableCell className='tableCell'>₹ 150</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell className='tableCell'>
-                            <img src={rice} alt="french_fries"/>
-                            <Typography className='menuText'>Lemon Rice</Typography>
-                        </TableCell>
-                        <TableCell className='tableCell'>14526</TableCell>
-                        <TableCell className='tableCell'>3606</TableCell>
-                        <TableCell className='tableCell'>In Stock</TableCell>
-                        <TableCell className='tableCell'>₹ 40</TableCell>
-                        <TableCell className='tableCell'>₹ 40</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell className='tableCell'>
-                            <img src={fried_rice} alt="french_fries"/>
-                            <Typography className='menuText'>Fried Rice</Typography>
-                        </TableCell>
-                        <TableCell className='tableCell'>14526</TableCell>
-                        <TableCell className='tableCell'>5384</TableCell>
-                        <TableCell className='tableCell'>In Stock</TableCell>
-                        <TableCell className='tableCell'>₹ 60</TableCell>
-                        <TableCell className='tableCell'>₹ 60</TableCell>
-                    </TableRow>
-                </TableBody>
+                {
+                    data.map((item:any, id: any) => {
+                        return(
+                        <TableBody className='tableBody' data-testid="allMenu">
+                            <TableRow>
+                                <TableCell className='tableCell TableImgBox'>
+                                    <img src={item.image} alt="french_fries"/>
+                                <Typography className='menuText' data-testid="add">{item.name}</Typography>
+                                </TableCell>
+                                <TableCell className='tableCell'>{id}</TableCell>
+                                <TableCell className='tableCell'>{item.stock}</TableCell>
+                                <TableCell className='tableCell'>
+                                    {item.stock > 0 ? <p> In Stock </p>: <p>Out of Stock</p>}
+                                </TableCell>
+                                <TableCell className='tableCell'>{item.price}</TableCell>
+                                <TableCell className='tableCell'>{item.discountPrice}</TableCell>
+                                <TableCell className='tableCell tableDelete' onClick={()=> handleEditClick(item)}>Edit</TableCell>
+                                <TableCell className='tableCell tableDelete' onClick={() => handleDeleteClick(item._id)} data-testid="deleteMenu">Delete</TableCell>
+                            </TableRow>
+                        </TableBody>
+                        )
+                    })
+                }
+                {/*for  Delete popup */}
+                {confirmBox.isLoading && (
+                    <ConfirmBox 
+                        message={confirmBox.message} 
+                        onDialog={userDelete}
+                    />)
+                }
+                
             </Table>
         </>
         )

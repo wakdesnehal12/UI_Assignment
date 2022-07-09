@@ -1,10 +1,9 @@
 import React from 'react';
 import { Container, Grid, Typography, ListItem, ListItemText } from '@material-ui/core';
 import logo from '../../assets/logo.png'
-import admin from '../../assets/admin.png'
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import DrawerComp from './DrawerComp';
-import Product_list from '../Table/Product_list';
+import ProfileBox from './ProfileBox';
 
 export default function Product_header() {
     return (
@@ -26,9 +25,9 @@ export default function Product_header() {
                             <ListItemText>Restaurant list</ListItemText>
                         </ListItem>
                         <DrawerComp/>
-                        </Grid>
+                    </Grid>
                     <Grid lg={1} md={1} sm={2} xs={4} className="admin">
-                        <img src={admin} alt="admin"/>
+                        <ProfileBox/>
                     </Grid>
                     <Grid lg={1} md={1} sm={2} xs={4}>
                         <div className='icon'>
@@ -38,7 +37,6 @@ export default function Product_header() {
                     </Grid> 
                 </Grid>
             </Container>
-            {/* <Product_list/> */}
         </div>
         )
     }
