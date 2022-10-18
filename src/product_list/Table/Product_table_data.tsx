@@ -94,7 +94,7 @@ export default function Product_table_data({handleEditClick}:any) {
         }).catch((err) => {
             console.log(err)
         })
-        
+       
     }
     
     return (

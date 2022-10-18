@@ -10,12 +10,6 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockedUsedNavigate,
 }));
 
-
-// global.fetch = jest.fn(() => 
-// Promise.resolve({
-//     json: () => Promise.resolve({test: 1234}),
-// })) as jest.Mock
-
 describe('Login', () => {
     test('has an input field', () => {
         const {getByTestId} = render(<Login/>)   

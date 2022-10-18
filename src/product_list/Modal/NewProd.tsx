@@ -165,7 +165,7 @@ export default function NewProd({ handleClose, open, scroll, dataShow, editData,
                         <Typography>{data}</Typography>
                         <Grid container>
                             <Grid item lg={6} md={6} sm={12} xs={12} className='productText'>
-                                <Typography >Product Image</Typography>
+                                <Typography>Product Image</Typography>
                                 <PopBox uploadHandler={uploadHandler} handleSubmit={handleSubmit} imgref={imgref} uploadImage={uploadImage} upload={upload}/>
                                 <Carousel className='mySlider'>
                                     <Carousel.Item>

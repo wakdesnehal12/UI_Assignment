@@ -6,7 +6,7 @@ import admin from '../../assets/admin.png'
 import { useNavigate } from 'react-router-dom';
 
 export default function ProfileBox() {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {

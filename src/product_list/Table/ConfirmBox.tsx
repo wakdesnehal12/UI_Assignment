@@ -9,9 +9,9 @@ interface Props{
 export default function ConfirmBox({message, onDialog}: Props) {
   return (
     <div className='dialogBox'>
-        <Typography>{message}</Typography>
-        <button onClick={() => onDialog(true)} className="deleteBtn" data-testid="deleteBtn">Delete</button>
-        <button onClick={() => onDialog(false)} className="cancelBtn" data-testid="editBtn">Cancel</button>
+      <Typography>{message}</Typography>
+      <button onClick={() => onDialog(true)} className="deleteBtn" data-testid="deleteBtn">Delete</button>
+      <button onClick={() => onDialog(false)} className="cancelBtn" data-testid="editBtn">Cancel</button>
     </div>
   )
 }

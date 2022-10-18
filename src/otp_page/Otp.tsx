@@ -7,7 +7,7 @@ import { OtpMsg } from './OtpMsg';
 import {useLocation, useNavigate} from 'react-router-dom';
 
 export interface buttonPro{
-    item: any,
+    // item: any,
     save: any
     // data-testid: any
 }
@@ -114,7 +114,7 @@ export default function Otp() {
                             <OtpMsg
                                 data-testid={'otpmsgs-' + key} key={key}
                                 save={saveData}
-                                item={items}
+                                // item={items}
                             />
                         </div>
                     )
